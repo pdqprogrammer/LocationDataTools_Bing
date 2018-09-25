@@ -13,13 +13,14 @@ public class LocationServices {
         //http://dev.virtualearth.net/REST/v1/Locations?query=117%20Husson%20Ave%20Bronx,%20NY --- Query Example
         String webURL = "http://dev.virtualearth.net/REST/v1/Locations?query=" + query + "&key=" + BING_KEY;
 
-        return webURL.replace(" ", "%20");//return
+        return webURL.replace(" ", "%20");//return url with spaces replaced
     }
 
     //pull query url for Bing of specific address information provided
     public static String SpecificQueryData(String address, String city, String state, String zip, String country){
         String webURL = "http://dev.virtualearth.net/REST/v1/Locations?";
 
+        //append location fields that contain data
         if(!country.isEmpty())
             webURL += "countryRegion=" + country +"&";
         if(!address.isEmpty())
@@ -33,14 +34,15 @@ public class LocationServices {
 
         webURL += "key=" + BING_KEY;
 
-        return webURL.replace(" ", "%20");
+        return webURL.replace(" ", "%20");//return url with spaces replaced
     }
 
     //pull query url for distance in miles for Bing
-    public static String DistanceMilesData (List<float[]> coords){
+    public static String DistanceMilesData (List<double[]> coords){
         String webURL = "http://dev.virtualearth.net/REST/v1/Routes?";
 
         try{
+            //check each of the coords  and append them to url
             for(int i=0; i<coords.size(); i++){
                 int waypoint = 1 + i;
 
@@ -49,8 +51,10 @@ public class LocationServices {
 
             webURL += "distanceUnit=mi&key=" + BING_KEY;
 
-            return webURL.replace(" ", "%20");
+            return webURL.replace(" ", "");//return url with spaces removed
         } catch (Exception e) {
+            //inform user that the information was unable to be called
+            System.out.println("failed to pull distance api");
             return "";
         }
     }
