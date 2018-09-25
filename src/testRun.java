@@ -8,6 +8,8 @@ public class testRun {
         List<String[]> testLocationList = InitList();
         List<double[]> testCoordsList = InitCoords();
 
+        List<String[]> testFullDetailList = new ArrayList<>();
+
         //run test on getting different location data and output to terminal
         for(int i=0; i<testLocationList.size(); i++){
             //get location data using specific query
@@ -17,10 +19,31 @@ public class testRun {
             String[] currLoc = testLocationList.get(i);
 
             String[] detailLoc = LocationManagement.GetLocationDetails(currLoc[0], currLoc[1], currLoc[2], currLoc[3], currLoc[4]);
-            String[] broadLoc = LocationManagement.GetLocationDetails(currLoc[0] + " " + currLoc[1]  + " " + currLoc[2]  + " " +  currLoc[3]);
+
+            testFullDetailList.add(detailLoc);
         }
 
         double distanceTest = LocationManagement.GetDistanceBetween(testCoordsList);
+
+        List<List<String[]>> closeList = LocationManagement.GetClosestLocationList(testFullDetailList, new int[]{5,6}, 3, 5000.0);
+
+        List<double[]> centerCoordsList = new ArrayList<>();
+
+        for(int i=0; i<closeList.size(); i++){
+            List<double[]> pointsList = new ArrayList<>();
+
+            for(int j=0; j<closeList.get(i).size(); j++){
+                double[] points = {
+                        Double.parseDouble(closeList.get(i).get(j)[5]),
+                        Double.parseDouble(closeList.get(i).get(j)[6])
+                };
+
+                pointsList.add(points);
+            }
+
+            double[] centerCoords = LocationManagement.GetCenterCoords(pointsList);
+            centerCoordsList.add(centerCoords);
+        }
 
         System.exit(0);
     }

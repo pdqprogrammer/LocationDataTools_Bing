@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bing Map Pin Page</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+        <script type="text/javascript">
+            var map = null;
+
+            function getMap(){
+                map = new Microsoft.Maps.Map(document.getElementById("myMap"), {credentials: "AoZot6IfTomvuyyuFD-J-9HCjZ-VV3k4da0wSh5guC3Q0irjul7pin0MwDx2rB4L", showDashboard: false, mapTypeId: Microsoft.Maps.MapTypeId.road});
+                addPushpinWithOptions();
+            }
+
+            function addPushpinWithOptions(){
+                var offset = new Microsoft.Maps.Point(0, 5);
+                var pushpinOptions = {visible: [PINS_VISIBLE_HERE], icon:"[FIRST_PIN_HERE]", width: 30, height: 50, textOffset: offset};
+                var pushpin;
+
+                map.setView( {center: new Microsoft.Maps.Location([CENTER_LAT_HERE],[CENTER_LONG_HERE]), zoom: [ZOOM_LEVEL_HERE]});
+
+                [BUILD_OUT_PINS_HERE]
+
+                //pushpinOptions = {visible: true, icon:"[OTHER_PIN_HERE]", width: 30, height: 50, textOffset: offset};
+                //pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location([PIN_LAT_HERE],[PIN_LONG_HERE]), pushpinOptions);
+                //map.entities.push(pushpin);
+            }
+        </script>
+    </head>
+    <body onload="getMap();">
+        <div id="myMap" style="position:relative; width:1000px; height:775px;"></div>
+    </body>
+</html>
