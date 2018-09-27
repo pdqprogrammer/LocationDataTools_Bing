@@ -101,153 +101,34 @@ public class LocationManagement {
 
     //method to return list of closest locations
     public static List<String[]> GetClosestLocationList(String[] location, List<String[]> locationList, int locationCount, double maxDistance){
+        //method to get list with distances
+        List<String[]> locationCoordDistList = GetDistanceList(location, locationList);
+
+        //call method to sort the list here
+
+        //check list size and if smaller than location count set its size to count
         if (locationList.size() < locationCount)
             locationCount = locationList.size();
 
-        List<String[]> closestLocations = new ArrayList<>();
-        String[] firstLocation = new String[location.length + 1];
+        List<String[]> closestLocationsList = new ArrayList<>();//list to hold closest locations list
 
-        System.arraycopy(location, 0, firstLocation, 0, location.length);
-        firstLocation[firstLocation.length-1] = "0.0";
+        //loop through locations with distance list
+        for(int i=0; i<locationCoordDistList.size(); i++){
+            String[] currLocation = locationCoordDistList.get(i);//get current location
+            double distance = Double.parseDouble(currLocation[currLocation.length-1]);//get distance value
 
-        closestLocations.add(firstLocation);
+            //if distance is > maxDistance then continue for now...if sorted list then break
+            if (distance > maxDistance)
+                continue;//switch to break after developing sorted list
 
-        double[] locCoords = {
-                Double.parseDouble(location[5]),
-                Double.parseDouble(location[6])
-        };
+            closestLocationsList.add(currLocation);//add to closest location list
 
-        for (int i=0; i<locationList.size(); i++){
-            double[] listCoords = {
-                    Double.parseDouble(locationList.get(i)[5]),
-                    Double.parseDouble(locationList.get(i)[6])
-            };
-
-            List<double[]> coordsList = new ArrayList<>();
-            coordsList.add(locCoords);
-            coordsList.add(listCoords);
-
-            double distanceBetween = LocationManagement.GetDistanceBetween(coordsList);
-
-            if(distanceBetween > maxDistance)
-                continue;
-
-            String[] lastCloseLocation = closestLocations.get(closestLocations.size()-1);
-            double lastDistance = Double.parseDouble(lastCloseLocation[lastCloseLocation.length-1]);
-
-            //here is where i have to figure out how to manage
-            //check if less than first
-            //check if more than last
-            //check if between first and last
-            ////here is the one to figure out that requires some thinking
+            //if closest location list populated with location count amount then break out of loop
+            if(closestLocationsList.size() >= locationCount)
+                break;
         }
 
-
-        return closestLocations;
-    }
-
-    //method to return a list of the closest locations...needs optimizations and revamping of formula to run
-    public static List<List<String[]>> GetClosestLocationList(List<String[]> locationList, int[] coordIndex, int locationCount, double maxDistance){
-        //BUILD NEXT
-
-        //update location count if location list is smaller
-        if (locationList.size() < locationCount)
-            locationCount = locationList.size();
-
-        //array to hold
-        List<List<String[]>> closeLocationsList = new ArrayList<>();
-
-        //loop through main list
-        for(int i=0; i<locationList.size(); i++){
-            List<String[]> tempList = new ArrayList<String[]>(locationList);
-            tempList.remove(i);
-
-            //grab coords from main list
-            double[] currCoords = {
-                    Double.parseDouble(locationList.get(i)[coordIndex[0]]),
-                    Double.parseDouble(locationList.get(i)[coordIndex[1]])
-            };
-
-            //list to hold current closest locations gathered
-            List<String[]> currCloseList = new ArrayList<>();
-
-            //loop through list minus curr main location
-            for (int j=0; j<tempList.size(); j++){
-                //grab coords from temp list
-                double[] tempCoords = {
-                        Double.parseDouble(tempList.get(j)[coordIndex[0]]),
-                        Double.parseDouble(tempList.get(j)[coordIndex[1]])
-                };
-
-                //add coords to list to check against
-                List<double[]> checkCoords = new ArrayList<>();
-                checkCoords.add(currCoords);
-                checkCoords.add(tempCoords);
-
-                //get the distance between points using bing api
-                double distance = GetDistanceBetween(checkCoords);
-
-                //of distance is greater that maxDistance then continue on
-                if (distance > maxDistance)
-                    continue;
-
-                //string to hold the location to put into list
-                String[] putLocArray = new String[tempList.get(j).length + 1];
-
-                if(currCloseList.size() > 0){
-                    //grab last location and distance
-                    String[] lastLoc = currCloseList.get(currCloseList.size()-1);
-                    double lastDist = Double.parseDouble(lastLoc[lastLoc.length-1]);
-
-                    //check if distance is greater than last distance in curr list
-                    if (distance > lastDist){
-                        //check is list is smaller in size than location amount set
-                        if(currCloseList.size() < locationCount) {
-                            //copy location info into put location array and set distance
-                            System.arraycopy(tempList.get(j), 0, putLocArray, 0, tempList.get(j).length);
-                            putLocArray[putLocArray.length - 1] = distance + "";
-
-                            currCloseList.add(putLocArray);//add location into current closest list
-                        } else {
-                            continue;//move on to next location because the list is at capacity
-                        }
-                    } else {
-                        //loop through the current close list
-                        for (int k=0; k<currCloseList.size(); k++){
-                            //grab the curr location in the current close list and distance
-                            String[] currLoc = currCloseList.get(k);
-                            double currDist = Double.parseDouble(currLoc[currLoc.length-1]);
-
-                            //check if distance is closer
-                            if(distance < currDist){
-                                //replace the curr close location with current location in temp list
-                                System.arraycopy(tempList.get(j), 0, putLocArray, 0, tempList.get(j).length);
-                                putLocArray[putLocArray.length - 1] = distance + "";
-
-                                currCloseList.add(k, putLocArray);
-
-                                //check if location has gone over size and remove last element
-                                if(currCloseList.size() > locationCount){
-                                    currCloseList.remove(currCloseList.size()-1);
-                                }
-
-                                break;//get out of loop if conditions are hit earlier
-                            }
-                        }
-                    }
-                } else {
-                    //add to empty list the current location in the temp list
-                    System.arraycopy(tempList.get(j), 0, putLocArray, 0, tempList.get(j).length);
-                    putLocArray[putLocArray.length - 1] = distance + "";
-
-                    currCloseList.add(putLocArray);
-                }
-            }
-            //push the current close list into close locations list
-            closeLocationsList.add(currCloseList);
-        }
-
-        return closeLocationsList;
+        return closestLocationsList;
     }
 
     //method to determine the best location match based on if match is good or ranking order
@@ -307,5 +188,79 @@ public class LocationManagement {
         }
 
         return locationInfo;//send back populated String array
+    }
+
+    //method to get list with distances
+    private static List<String[]> GetDistanceList(String[] location, List<String[]> locationList){
+        List<String[]> locationDistList = new ArrayList<>();
+
+        double[] locationCoords = {
+                Double.parseDouble(location[5]),
+                Double.parseDouble(location[6])
+        };
+
+        for (int i=0; i<locationList.size(); i++){
+            String[] currLoc = new String[locationList.get(i).length + 1];
+            System.arraycopy(locationList.get(i), 0, currLoc, 0, locationList.get(i).length);
+
+            double[] currCoords = {
+                    Double.parseDouble(currLoc[5]),
+                    Double.parseDouble(currLoc[6])
+            };
+
+            List<double[]> coordsList = new ArrayList<>();
+            coordsList.add(locationCoords);
+            coordsList.add(currCoords);
+
+            currLoc[currLoc.length - 1] = GetDistanceBetween(coordsList) + "";
+
+            locationDistList.add(currLoc);
+        }
+
+        return locationDistList;
+    }
+
+    //method to sort location list
+    private static List<String[]> GetSortedDistList(List<String[]> locationDistList){
+        if(locationDistList.isEmpty())
+            return locationDistList;
+
+        List locDistA = locationDistList.subList(0, locationDistList.size()/2);
+        List locDistB = locationDistList.subList(locationDistList.size() - locDistA.size(), locationDistList.size()-1);
+
+        locDistA = GetSortedDistList(locDistA);
+        locDistB = GetSortedDistList(locDistB);
+
+        locationDistList = MergeLists(locDistA, locDistB);
+
+        return locationDistList;
+    }
+
+    private static List<String[]> MergeLists(List<String[]> locDistListA, List<String[]> locDistListB){
+        int listAIndex = 0;
+        int listBIndex = 0;
+
+        List<String[]> mergedList = new ArrayList<>();
+
+        while(listAIndex < locDistListA.size() && listBIndex < locDistListB.size()){
+            double distanceA = Double.parseDouble(locDistListA.get(listAIndex)[7]);
+            double distanceB = Double.parseDouble(locDistListB.get(listBIndex)[7]);
+
+            if(distanceA < distanceB){
+                mergedList.add(locDistListA.get(listAIndex));
+                listAIndex++;
+            } else {
+                mergedList.add(locDistListB.get(listBIndex));
+                listBIndex++;
+            }
+        }
+
+        if(listAIndex < locDistListA.size())
+            mergedList.addAll(locDistListA.subList(listAIndex, locDistListA.size()-1));
+
+        if(listBIndex < locDistListB.size())
+            mergedList.addAll(locDistListB.subList(listBIndex, locDistListB.size()-1));
+
+        return mergedList;
     }
 }

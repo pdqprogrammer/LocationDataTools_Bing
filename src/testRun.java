@@ -15,35 +15,16 @@ public class testRun {
             //get location data using specific query
             //get location using general query
             //print to terminal
-
             String[] currLoc = testLocationList.get(i);
-
             String[] detailLoc = LocationManagement.GetLocationDetails(currLoc[0], currLoc[1], currLoc[2], currLoc[3], currLoc[4]);
 
             testFullDetailList.add(detailLoc);
         }
 
         double distanceTest = LocationManagement.GetDistanceBetween(testCoordsList);
+        double[] centerCoordsList = LocationManagement.GetCenterCoords(testCoordsList);
 
-        List<List<String[]>> closeList = LocationManagement.GetClosestLocationList(testFullDetailList, new int[]{5,6}, 3, 5000.0);
-
-        List<double[]> centerCoordsList = new ArrayList<>();
-
-        for(int i=0; i<closeList.size(); i++){
-            List<double[]> pointsList = new ArrayList<>();
-
-            for(int j=0; j<closeList.get(i).size(); j++){
-                double[] points = {
-                        Double.parseDouble(closeList.get(i).get(j)[5]),
-                        Double.parseDouble(closeList.get(i).get(j)[6])
-                };
-
-                pointsList.add(points);
-            }
-
-            double[] centerCoords = LocationManagement.GetCenterCoords(pointsList);
-            centerCoordsList.add(centerCoords);
-        }
+        List<String[]> closeList = LocationManagement.GetClosestLocationList(testFullDetailList.get(2), testFullDetailList, 3, 5000.0);
 
         System.exit(0);
     }
