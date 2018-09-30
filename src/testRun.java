@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,21 +11,23 @@ public class testRun {
 
         List<String[]> testFullDetailList = new ArrayList<>();
 
+        String fileLoc = System.getProperty("user.home") + "/Desktop/Maps/testing.html";
+
         //run test on getting different location data and output to terminal
         for(int i=0; i<testLocationList.size(); i++){
-            //get location data using specific query
-            //get location using general query
-            //print to terminal
             String[] currLoc = testLocationList.get(i);
             String[] detailLoc = LocationManagement.GetLocationDetails(currLoc[0], currLoc[1], currLoc[2], currLoc[3], currLoc[4]);
 
             testFullDetailList.add(detailLoc);
         }
 
-        double distanceTest = LocationManagement.GetDistanceBetween(testCoordsList);
-        double[] centerCoordsList = LocationManagement.GetCenterCoords(testCoordsList);
+        double distanceTest = LocationManagement.GetDistanceBetween(testCoordsList);//distance test
+        double[] centerCoordsList = LocationManagement.GetCenterCoords(testCoordsList);//center coord test
 
-        List<String[]> closeList = LocationManagement.GetClosestLocationList(testFullDetailList.get(2), testFullDetailList, 3, 5000.0);
+        List<String[]> closeList = LocationManagement.GetClosestLocationList(testFullDetailList.get(2), testFullDetailList, 3, 5000.0);//closest list test
+
+        //test to build a multipin map site
+        LocationMapSite.GenerateMultiPinLocationMap(fileLoc, testCoordsList, centerCoordsList, new String[]{"I:/GameWork/GameCode/CurrentProjects/LocationTools/LocationDataTools_Bing/resources/map-pin-png-6.png"}, 10);
 
         System.exit(0);
     }
@@ -52,9 +55,6 @@ public class testRun {
     }
 }
 
-//important functions to develop
-//create list of closest locations -- set max distance, location max count, list of locations
-//query for all information on an address based on result -- location information -- check
-//build a location map site -- list of locations, pin list, center point coords, set zoom (auto or manual)
+//functions to develop in future
 //append map into an already built website -- base html, id to insert into
 //map screen shot capabilities -- map site, class or tool to take screens of site

@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99200479-aa64-4cf0-8deb-befbbe2ba160" name="Default Changelist" comment="" />
+    <list default="true" id="99200479-aa64-4cf0-8deb-befbbe2ba160" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/map-pin-png-6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/LocationManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/LocationManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/LocationMapSite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/LocationMapSite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/bingMapHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/bingMapHtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/testRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LocationDataTools_Bing/testRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/LocationDataTools_Bing - Shortcut.lnk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/LocationManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/LocationManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/LocationMapSite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/LocationMapSite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/resources/bingMapHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/resources/bingMapHtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/LocationDataTools_Bing/testRun.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/bingMapHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/bingMapHtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LocationManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocationManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LocationMapSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocationMapSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/testRun.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,46 +102,68 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-895969392">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="1" />
+          <entry key="java" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="JAVA" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1172" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1172" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/testRun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
+            <state relative-caret-position="221">
+              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/LocationManagement.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LocationMapSite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
-              <caret line="260" column="44" lean-forward="true" selection-start-line="260" selection-start-column="44" selection-end-line="260" selection-end-column="44" />
+            <state relative-caret-position="-1197">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
               <folding>
-                <element signature="method#GetLocationDetails#0;class#LocationManagement#0" />
-                <element signature="method#GetLocationDetails#1;class#LocationManagement#0" />
-                <element signature="method#GetDistanceBetween#0;class#LocationManagement#0" />
-                <element signature="method#GetCenterCoords#0;class#LocationManagement#0" />
-                <element signature="method#GetClosestLocationList#0;class#LocationManagement#0" />
-                <element signature="method#GetBestMatchLoc#0;class#LocationManagement#0" />
-                <element signature="method#GetDistanceList#0;class#LocationManagement#0" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/bingMapHtml.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/LocationServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="73" lean-forward="true" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LocationMapSite.java">
+        <entry file="file://$PROJECT_DIR$/src/LocationManagement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="424">
+              <caret line="126" selection-start-line="126" selection-end-line="126" />
             </state>
           </provider>
         </entry>
@@ -143,7 +182,11 @@
       <find>float</find>
       <find>currCloseList.add</find>
       <find>'</find>
+      <find>Except</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -151,28 +194,53 @@
         <option value="$PROJECT_DIR$/src/LocationServices.java" />
         <option value="$PROJECT_DIR$/src/JSONGetter.java" />
         <option value="$PROJECT_DIR$/resources/bingMapHtml.html" />
+        <option value="$PROJECT_DIR$/src/LocationManagement.java" />
         <option value="$PROJECT_DIR$/src/LocationMapSite.java" />
         <option value="$PROJECT_DIR$/src/testRun.java" />
-        <option value="$PROJECT_DIR$/src/LocationManagement.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="21" />
-    <option name="width" value="1440" />
-    <option name="height" value="879" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LocationDataTools_Bing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LocationDataTools_Bing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LocationDataTools_Bing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LocationDataTools_Bing" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LocationDataTools_Bing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LocationDataTools_Bing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537990678804" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538341915363" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -259,11 +327,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1455" height="935" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2725322" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49838188" weight="0.27238807" />
+      <window_info id="Structure" order="1" sideWeight="0.50161815" side_tool="true" weight="0.27238807" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -272,14 +340,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39775562" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39696312" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -298,90 +366,64 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/testRun.java</url>
-          <line>28</line>
+          <line>31</line>
           <properties />
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LocationManagement.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LocationManagement.java</url>
-          <line>115</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LocationManagement.java</url>
-          <line>123</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LocationManagement.java</url>
-          <line>127</line>
-          <properties />
-          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/SiteBuilder.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class" />
+    <entry file="file://$PROJECT_DIR$/resources/bingMapHtml.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="332" selection-start-line="332" selection-end-line="332" />
+        <state relative-caret-position="425">
+          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JSONGetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="357">
           <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SiteBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LocationServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="8" column="108" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="108" />
+        <state relative-caret-position="340">
+          <caret line="20" column="73" lean-forward="true" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/bingMapHtml.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LocationMapSite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/testRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="26" column="101" selection-start-line="26" selection-start-column="101" selection-end-line="26" selection-end-column="101" />
+        <state relative-caret-position="-1197">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LocationManagement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="260" column="44" lean-forward="true" selection-start-line="260" selection-start-column="44" selection-end-line="260" selection-end-column="44" />
-          <folding>
-            <element signature="method#GetLocationDetails#0;class#LocationManagement#0" />
-            <element signature="method#GetLocationDetails#1;class#LocationManagement#0" />
-            <element signature="method#GetDistanceBetween#0;class#LocationManagement#0" />
-            <element signature="method#GetCenterCoords#0;class#LocationManagement#0" />
-            <element signature="method#GetClosestLocationList#0;class#LocationManagement#0" />
-            <element signature="method#GetBestMatchLoc#0;class#LocationManagement#0" />
-            <element signature="method#GetDistanceList#0;class#LocationManagement#0" />
-          </folding>
+        <state relative-caret-position="424">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/testRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
         </state>
       </provider>
     </entry>

@@ -103,8 +103,7 @@ public class LocationManagement {
     public static List<String[]> GetClosestLocationList(String[] location, List<String[]> locationList, int locationCount, double maxDistance){
         //method to get list with distances
         List<String[]> locationCoordDistList = GetDistanceList(location, locationList);
-
-        //call method to sort the list here
+        locationCoordDistList = GetSortedDistList(locationCoordDistList);//call method to sort the list here
 
         //check list size and if smaller than location count set its size to count
         if (locationList.size() < locationCount)
@@ -119,7 +118,7 @@ public class LocationManagement {
 
             //if distance is > maxDistance then continue for now...if sorted list then break
             if (distance > maxDistance)
-                continue;//switch to break after developing sorted list
+                break;//switch to break after developing sorted list
 
             closestLocationsList.add(currLocation);//add to closest location list
 
@@ -222,44 +221,56 @@ public class LocationManagement {
 
     //method to sort location list
     private static List<String[]> GetSortedDistList(List<String[]> locationDistList){
-        if(locationDistList.isEmpty())
+        if (locationDistList.size() < 2) {
             return locationDistList;
+        } else {
+            int listSize = locationDistList.size();
+            int halfListSize = listSize / 2;
 
-        List locDistA = locationDistList.subList(0, locationDistList.size()/2);
-        List locDistB = locationDistList.subList(locationDistList.size() - locDistA.size(), locationDistList.size()-1);
+            List locDistA = locationDistList.subList(0, halfListSize);
+            List locDistB = locationDistList.subList(halfListSize, listSize);
 
-        locDistA = GetSortedDistList(locDistA);
-        locDistB = GetSortedDistList(locDistB);
+            locDistA = GetSortedDistList(locDistA);
+            locDistB = GetSortedDistList(locDistB);
 
-        locationDistList = MergeLists(locDistA, locDistB);
+            locationDistList = MergeLists(locDistA, locDistB);
 
-        return locationDistList;
+            return locationDistList;
+        }
     }
 
     private static List<String[]> MergeLists(List<String[]> locDistListA, List<String[]> locDistListB){
         int listAIndex = 0;
         int listBIndex = 0;
 
-        List<String[]> mergedList = new ArrayList<>();
+        ArrayList mergedList = new ArrayList();
 
-        while(listAIndex < locDistListA.size() && listBIndex < locDistListB.size()){
-            double distanceA = Double.parseDouble(locDistListA.get(listAIndex)[7]);
-            double distanceB = Double.parseDouble(locDistListB.get(listBIndex)[7]);
+        while(listAIndex < locDistListA.size() && listBIndex < locDistListB.size()) {
+            double distanceA = Double.parseDouble((locDistListA.get(listAIndex))[7]);
+            double distanceB = Double.parseDouble((locDistListB.get(listBIndex))[7]);
 
-            if(distanceA < distanceB){
+            if (distanceA < distanceB) {
                 mergedList.add(locDistListA.get(listAIndex));
-                listAIndex++;
+                ++listAIndex;
             } else {
                 mergedList.add(locDistListB.get(listBIndex));
-                listBIndex++;
+                ++listBIndex;
             }
         }
 
-        if(listAIndex < locDistListA.size())
-            mergedList.addAll(locDistListA.subList(listAIndex, locDistListA.size()-1));
+        if (listAIndex < locDistListA.size()) {
+            while(listAIndex < locDistListA.size()) {
+                mergedList.add(locDistListA.get(listAIndex));
+                ++listAIndex;
+            }
+        }
 
-        if(listBIndex < locDistListB.size())
-            mergedList.addAll(locDistListB.subList(listBIndex, locDistListB.size()-1));
+        if (listBIndex < locDistListB.size()) {
+            while(listBIndex < locDistListB.size()) {
+                mergedList.add(locDistListB.get(listBIndex));
+                ++listBIndex;
+            }
+        }
 
         return mergedList;
     }
